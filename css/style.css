@@ -1,5 +1,40 @@
-#display{
-  border-style:inset;
-  height:10vh;
-  width: 15vw;
+body{
+	margin:0px;
 }
+
+#calculator{
+	width:310px;
+	height:470px;
+	border-style:solid;
+	border-width:medium;
+	margin:auto;
+	position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.rows {
+    margin-left: 1%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    height: 72px;
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#display{
+	width:75%;
+	border-style:inset;
+	border-width:4px;
+}
+
+#clear{
+	width:20%;
+}
+
+
+.row-botton{
+	width:24%;
+}
+
+
