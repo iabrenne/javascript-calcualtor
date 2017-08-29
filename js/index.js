@@ -27,8 +27,25 @@ $(document).ready(function () {
   });
 
   $(".operator-key").click(function () {
-    populateDisplay(disallowLeadZero(this.value));
+
+	  var curDisplayValue = $("#display").html();
+		var curDisplayValue_minLast = curDisplayValue.substring(0, curDisplayValue.length - 1);
+	  var lastCharofDisplayValue = curDisplayValue[curDisplayValue.length - 1];
+		var valuetoDisplay;
+
+	  /* If last character in display screen is an operator, replace the operator with current value */
+
+		if (lastCharofDisplayValue == "+" || lastCharofDisplayValue == "-" || lastCharofDisplayValue == "*" || lastCharofDisplayValue == "/" )
+			valuetoDisplay = curDisplayValue_minLast + this.value;
+		else
+			valuetoDisplay = curDisplayValue + this.value;
+
+		populateDisplay(valuetoDisplay);
+
+		/* reset decimal counter to zero, so that decimal point can be used again in the next number */
+
     decCounter = 0;
+
   });
 });
 
